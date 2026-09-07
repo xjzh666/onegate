@@ -48,11 +48,11 @@
 钩子在每个会话开始（含上下文压缩、`/clear` 之后）自动注入同意模型，并检测进行中的执行（`.agent/` 存在时提示恢复路径）：
 
 ```
-/plugin marketplace add xjzh666/onegate
+/plugin marketplace add https://github.com/xjzh666/onegate.git
 /plugin install onegate@onegate
 ```
 
-（仓库现为私有；公开后他人可直接用第一条命令安装。）
+注意用完整 HTTPS URL——`xjzh666/onegate` 简写会被解析成 SSH 协议克隆，带口令的 key 会在非交互环境里直接失败。仓库现为私有：有访问权限且配好 git 凭据的机器可直接装；公开后任何人可装。
 
 无法访问 github.com 的机器，先把仓库放到本地再装：
 
