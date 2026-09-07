@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# onegate SessionStart hook：注入同意模型核心；检测进行中的执行
+set -euo pipefail
+
+context="onegate 同意模型（第一铁律）：授权范围 = 用户说出的话的范围。问句只回答——发现问题也只汇报不动手；祈使句授权该指令范围；任何改动前先呈现方案征得批准。任务开始前先读 using-workflow 技能。"
+
+# 用 git 仓库根检测（会话可能开在子目录或 worktree 里）
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+if [ -d "$ROOT/.agent" ]; then
+  context="${context} [检测到 .agent/：有进行中的 onegate 执行——先读 .agent/handover.md 恢复语境，再按 .agent/progress.md 定位恢复点，有完成行的任务不重派。]"
+fi
+
+# JSON 转义（内容受控，双保险）
+context="${context//\\/\\\\}"
+context="${context//\"/\\\"}"
+
+printf '{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"%s"}}\n' "$context"

@@ -1,0 +1,13 @@
+{
+  "name": "onegate",
+  "owner": {
+    "name": "xiejiezhen"
+  },
+  "plugins": [
+    {
+      "name": "onegate",
+      "source": "./",
+      "description": "Minimal agent dev workflow: single approval gate, strong-model execution, post-verification"
+    }
+  ]
+}
