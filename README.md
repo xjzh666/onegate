@@ -43,6 +43,28 @@
 
 ## 安装（Claude Code）
 
+### 方式一：插件（推荐，含 SessionStart 钩子）
+
+钩子在每个会话开始（含上下文压缩、`/clear` 之后）自动注入同意模型，并检测进行中的执行（`.agent/` 存在时提示恢复路径）：
+
+```
+/plugin marketplace add xjzh666/onegate
+/plugin install onegate@onegate
+```
+
+（仓库现为私有；公开后他人可直接用第一条命令安装。）
+
+无法访问 github.com 的机器，先把仓库放到本地再装：
+
+```
+/plugin marketplace add /本地路径/onegate
+/plugin install onegate@onegate
+```
+
+源文件更新后重跑 install（或提升 plugin.json 的 version）刷新缓存副本。
+
+### 方式二：仅复制技能（无钩子）
+
 ```bash
 # 个人级：所有项目可用
 cp -r skills/* ~/.claude/skills/
@@ -51,13 +73,11 @@ cp -r skills/* ~/.claude/skills/
 cp -r skills/* <项目>/.claude/skills/
 ```
 
-安装后技能按 description 自动触发。想让入口更可靠，在常用项目的 `CLAUDE.md` 加一行：
+技能按 description 自动触发，但同意模型不会被强制注入。可靠性兜底：在项目 `CLAUDE.md` 加一行
 
 ```
 任何任务开始前，先读 using-workflow 技能确认同意模型与路由。
 ```
-
-未来可选：打包成 plugin（`.claude-plugin/plugin.json` + session-start 钩子注入入口技能），获得与 superpowers 同级的强制触发。
 
 ## 与 superpowers 的区别
 
