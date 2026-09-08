@@ -1,7 +1,6 @@
 {
   "name": "onegate",
   "description": "Minimal agent dev workflow: single approval gate (spec), strong-model execution with per-task fresh review",
-  "version": "0.1.0",
   "author": {
     "name": "xiejiezhen"
   },

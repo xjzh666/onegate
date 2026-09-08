@@ -62,7 +62,7 @@
 /plugin install onegate@onegate
 ```
 
-源文件更新后重跑 install（或提升 plugin.json 的 version）刷新缓存副本。
+源文件更新后刷新本地副本：`/plugin marketplace update onegate` 然后 `/plugin update onegate@onegate`。plugin.json 不设 version 字段——缓存键取提交 SHA，push 后 update 即跟上。
 
 ### 方式二：仅复制技能（无钩子）
 
