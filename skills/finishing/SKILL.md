@@ -45,7 +45,7 @@ description: Use when the last task of the task list is complete and its review 
 - **更新 spec 后归档**：
   - 头部加完成标记：`> 状态：已完成 <日期>，合并提交 <SHA>`
   - 执行期间与 spec 不一致的实现——台账里每条 Ruling——逐条补进 spec 对应位置：spec 从意图文档变成**意图 + 结果**文档
-  - 提交到 `docs/specs/`，任务清单一并归档
+  - 提交到 `docs/onegate/specs/`（spec 与任务清单同文件）
   - 执行期间不改 spec：它是裁决的依据，中途修改破坏权威；偏差记台账，收尾统一折入归档版
 - 删除 `.agent/`——台账和接手文档写给接班 agent，完工后无接班场景；结果已折进归档 spec，git 历史接管记录
 - 只清理自己建的 `.worktrees/` 下的 worktree，其他目录不碰
