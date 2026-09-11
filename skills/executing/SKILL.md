@@ -46,7 +46,7 @@ brief 存 `.agent/task-N-brief.md`。同形小任务批合并：一份 brief 列
 - 用 [implementer-prompt.md](implementer-prompt.md) 模板
 - 实现者开工前可以提问（NEEDS_CONTEXT 状态）——这是最便宜的 brief 质检，别催它开工
 - 实现者禁止再派子代理；绝不并行派多个实现者
-- 派发后别干等：写下一份 brief、更新台账
+- **前台派发**，阻塞等结果——just-in-time 之下没有可并行的活（下一份 brief 要等本任务的代码落地），串行是设计不是浪费
 
 ### 3. 处理报告
 
