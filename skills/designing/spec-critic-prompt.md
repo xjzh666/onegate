@@ -1,9 +1,9 @@
 # spec 批评派发模板
 
-新鲜上下文派发。强模型，**显式指定**。spec + 任务清单写完、自审四查跑过之后、呈现与移交之前跑，一次。
+新鲜上下文派发。model 参数写 **`opus`**——省略会静默继承主模型。spec + 任务清单写完、自审四查跑过之后、呈现与移交之前跑，一次。
 
 ```
-子代理（general-purpose，强模型，显式指定）：
+子代理（general-purpose，model: opus）：
   description: "Critique spec draft"
   prompt: |
     你以新鲜眼光批评一份 spec 草稿。它即将成为一次自主执行的

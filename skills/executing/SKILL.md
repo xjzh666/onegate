@@ -40,7 +40,9 @@ brief 存 `.agent/task-N-brief.md`。同形小任务批合并：一份 brief 列
 ### 2. 派发
 
 - 派发前记 BASE：`git rev-parse HEAD`
-- 强模型，派发时**显式指定**（省略会静默继承会话模型）
+- model 参数写死 **`opus`**——"强模型"落到参数上才算数，省略会静默继承主模型
+- 发出 Agent 调用前看一眼：`model` 参数必须在场；不在场 = 派发作废，补上再发
+- 台账记 `Task N: dispatched (opus)`——模型写错了至少查得到
 - 用 [implementer-prompt.md](implementer-prompt.md) 模板
 - 实现者开工前可以提问（NEEDS_CONTEXT 状态）——这是最便宜的 brief 质检，别催它开工
 - 实现者禁止再派子代理；绝不并行派多个实现者
@@ -155,3 +157,4 @@ brief 存 `.agent/task-N-brief.md`。同形小任务批合并：一份 brief 列
 | "围栏外顺手小修" | 围栏外 = 汇报。 |
 | "`git add .` 省事" | 事故入口。逐文件 add。 |
 | "实现者自己拉了个评审" | 重复占位。评审是你派的，才算数。 |
+| "model 省了，继承的也够用" | 继承的是主模型：弱就静默降级，强就白烧钱，两头都坏。 |

@@ -8,7 +8,7 @@ description: Use when the last task of the task list is complete and its review 
 ## 1. 最终评审
 
 - **全量测试**：在当前这棵树上新鲜跑完整套件。早先的绿色只证明早先的树
-- **整体通读**：派强模型评审者（显式指定）读整分支 diff 包：
+- **整体通读**：派评审者读整分支 diff 包（model 参数写 `opus`，省略会静默继承主模型）：
   ```bash
   { git log --oneline BASE..HEAD; echo; git diff --stat BASE..HEAD; echo; git diff -U10 BASE..HEAD; } > .agent/final-diff.md
   ```

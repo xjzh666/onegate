@@ -1,9 +1,9 @@
 # 评审者派发模板
 
-新鲜上下文派发。强模型，**显式指定**。
+新鲜上下文派发。model 参数写 **`opus`**——省略会静默继承主模型。
 
 ```
-子代理（general-purpose，强模型，显式指定）：
+子代理（general-purpose，model: opus）：
   description: "Review task N"
   prompt: |
     你以新鲜的眼光评审一个任务的实现。这是任务级评审，

@@ -1,9 +1,9 @@
 # 实现者派发模板
 
-方括号处填充后派发。强模型，**显式指定**——省略模型会静默继承会话模型。
+方括号处填充后派发。model 参数写 **`opus`**——省略会静默继承主模型，等于没派强模型。
 
 ```
-子代理（general-purpose，强模型，显式指定）：
+子代理（general-purpose，model: opus）：
   description: "Implement task N: <任务名>"
   prompt: |
     你在实现一个任务。
