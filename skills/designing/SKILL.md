@@ -46,6 +46,7 @@ description: Use when the user requests a new feature, change, or bugfix that ne
 
 - 每任务一行：`交付物 + 验收要点`
 - 同形小任务（同类单文件小改 ×N）合并成一行
+- 变更产生长期信息（架构变化、关键决策、约定、接口契约）→ 末尾加一条**文档同步任务**：按项目 CLAUDE.md 的文档分工列出要同步的文档与节（新项目通常就是 CLAUDE.md 自己）；无长期信息则不加
 - 顺序即执行序（全程串行）
 
 ## 强模型批评（呈现前，跑一次）

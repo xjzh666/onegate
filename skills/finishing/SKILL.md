@@ -14,6 +14,8 @@ description: Use when the last task of the task list is complete and its review 
   ```
   BASE = `git merge-base <基础分支> HEAD`。把台账里的**挂起项**和**延期 minor 清单**一并给它，让它分诊：哪些必须合并前修
   派发里写明：控制者刚在此 HEAD 新鲜跑过全量（结果记台账）——评审**只读 diff 包、不重跑全套件**；仅当读 diff 产生具体疑问才跑聚焦的那一个测试（同 executing 评审规则）
+- **文档同步**：代码、文档、CLAUDE.md 三者是否同步（对照项目 CLAUDE.md 的文档维护约定）；缺口走下一行的修复轮
+- CLAUDE.md 明显膨胀（堆积历史记录、详细技术说明、重复内容）→ 建议用户拆分；只建议，结构由项目自己定
 - 有发现 → **一个**修复者带全部发现修一轮 → 一轮限定复审 → 残余走 executing 的裁决三出口
 - **没有第二轮修复潮**。残余的承重发现浮给用户（见下面菜单环节）
 
